@@ -8,17 +8,37 @@
 
 /* Begin PBXBuildFile section */
 		630D57482971941F0072E651 /* PyktoChatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630D57472971941F0072E651 /* PyktoChatApp.swift */; };
-		630D574A2971941F0072E651 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630D57492971941F0072E651 /* ContentView.swift */; };
+		630D574A2971941F0072E651 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630D57492971941F0072E651 /* RootView.swift */; };
 		630D574C297194200072E651 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 630D574B297194200072E651 /* Assets.xcassets */; };
 		630D574F297194200072E651 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 630D574E297194200072E651 /* Preview Assets.xcassets */; };
+		630D575E29719C750072E651 /* LexendDeca-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 630D575B29719C750072E651 /* LexendDeca-Bold.ttf */; };
+		630D575F29719C750072E651 /* LexendDeca-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 630D575C29719C750072E651 /* LexendDeca-SemiBold.ttf */; };
+		630D576029719C750072E651 /* LexendDeca-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 630D575D29719C750072E651 /* LexendDeca-Regular.ttf */; };
+		630D576329719F3B0072E651 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630D576229719F3B0072E651 /* Fonts.swift */; };
+		630D57652971AD320072E651 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 630D57642971AD320072E651 /* GoogleService-Info.plist */; };
+		630D57682971B1790072E651 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 630D57672971B1790072E651 /* FirebaseAuth */; };
+		630D576A2971B1790072E651 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 630D57692971B1790072E651 /* FirebaseFirestore */; };
+		630D576C2971B1790072E651 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 630D576B2971B1790072E651 /* FirebaseFirestoreSwift */; };
+		630D576E2971B1790072E651 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 630D576D2971B1790072E651 /* FirebaseStorage */; };
+		630D57702971B2330072E651 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630D576F2971B2330072E651 /* AppDelegate.swift */; };
+		630D57732971C2670072E651 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630D57722971C2670072E651 /* AuthViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		630D57442971941F0072E651 /* PyktoChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PyktoChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		630D57472971941F0072E651 /* PyktoChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PyktoChatApp.swift; sourceTree = "<group>"; };
-		630D57492971941F0072E651 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		630D57492971941F0072E651 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		630D574B297194200072E651 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		630D574E297194200072E651 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		630D575B29719C750072E651 /* LexendDeca-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-Bold.ttf"; sourceTree = "<group>"; };
+		630D575C29719C750072E651 /* LexendDeca-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-SemiBold.ttf"; sourceTree = "<group>"; };
+		630D575D29719C750072E651 /* LexendDeca-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-Regular.ttf"; sourceTree = "<group>"; };
+		630D576129719CB00072E651 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		630D576229719F3B0072E651 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		630D57642971AD320072E651 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		630D576F2971B2330072E651 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		630D57712971B5890072E651 /* PyktoChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PyktoChat.entitlements; sourceTree = "<group>"; };
+		630D57722971C2670072E651 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +46,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				630D57682971B1790072E651 /* FirebaseAuth in Frameworks */,
+				630D576E2971B1790072E651 /* FirebaseStorage in Frameworks */,
+				630D576A2971B1790072E651 /* FirebaseFirestore in Frameworks */,
+				630D576C2971B1790072E651 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,10 +75,19 @@
 		630D57462971941F0072E651 /* PyktoChat */ = {
 			isa = PBXGroup;
 			children = (
+				630D57712971B5890072E651 /* PyktoChat.entitlements */,
+				630D576129719CB00072E651 /* Info.plist */,
+				630D57642971AD320072E651 /* GoogleService-Info.plist */,
+				630D576F2971B2330072E651 /* AppDelegate.swift */,
 				630D57472971941F0072E651 /* PyktoChatApp.swift */,
-				630D57492971941F0072E651 /* ContentView.swift */,
-				630D574B297194200072E651 /* Assets.xcassets */,
 				630D574D297194200072E651 /* Preview Content */,
+				630D575A297194E90072E651 /* Fonts */,
+				630D5759297194D30072E651 /* Helpers */,
+				630D5758297194C90072E651 /* Services */,
+				630D5756297194810072E651 /* Model */,
+				630D5755297194490072E651 /* ViewModel */,
+				630D57572971949E0072E651 /* View */,
+				630D574B297194200072E651 /* Assets.xcassets */,
 			);
 			path = PyktoChat;
 			sourceTree = "<group>";
@@ -65,6 +98,54 @@
 				630D574E297194200072E651 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		630D5755297194490072E651 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				630D57722971C2670072E651 /* AuthViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		630D5756297194810072E651 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		630D57572971949E0072E651 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				630D57492971941F0072E651 /* RootView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		630D5758297194C90072E651 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		630D5759297194D30072E651 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				630D576229719F3B0072E651 /* Fonts.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		630D575A297194E90072E651 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				630D575B29719C750072E651 /* LexendDeca-Bold.ttf */,
+				630D575D29719C750072E651 /* LexendDeca-Regular.ttf */,
+				630D575C29719C750072E651 /* LexendDeca-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +164,12 @@
 			dependencies = (
 			);
 			name = PyktoChat;
+			packageProductDependencies = (
+				630D57672971B1790072E651 /* FirebaseAuth */,
+				630D57692971B1790072E651 /* FirebaseFirestore */,
+				630D576B2971B1790072E651 /* FirebaseFirestoreSwift */,
+				630D576D2971B1790072E651 /* FirebaseStorage */,
+			);
 			productName = PyktoChat;
 			productReference = 630D57442971941F0072E651 /* PyktoChat.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +198,9 @@
 				Base,
 			);
 			mainGroup = 630D573B2971941F0072E651;
+			packageReferences = (
+				630D57662971B1790072E651 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 630D57452971941F0072E651 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,8 +215,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				630D576029719C750072E651 /* LexendDeca-Regular.ttf in Resources */,
+				630D575F29719C750072E651 /* LexendDeca-SemiBold.ttf in Resources */,
 				630D574F297194200072E651 /* Preview Assets.xcassets in Resources */,
 				630D574C297194200072E651 /* Assets.xcassets in Resources */,
+				630D575E29719C750072E651 /* LexendDeca-Bold.ttf in Resources */,
+				630D57652971AD320072E651 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +231,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				630D574A2971941F0072E651 /* ContentView.swift in Sources */,
+				630D57732971C2670072E651 /* AuthViewModel.swift in Sources */,
+				630D57702971B2330072E651 /* AppDelegate.swift in Sources */,
+				630D574A2971941F0072E651 /* RootView.swift in Sources */,
+				630D576329719F3B0072E651 /* Fonts.swift in Sources */,
 				630D57482971941F0072E651 /* PyktoChatApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,12 +361,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PyktoChat/PyktoChat.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PyktoChat/Preview Content\"";
 				DEVELOPMENT_TEAM = P5LM23L9KQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PyktoChat/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -282,6 +382,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.scottmcnally.PyktoChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -293,12 +394,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PyktoChat/PyktoChat.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PyktoChat/Preview Content\"";
 				DEVELOPMENT_TEAM = P5LM23L9KQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PyktoChat/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -311,6 +415,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.scottmcnally.PyktoChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -339,6 +444,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		630D57662971B1790072E651 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		630D57672971B1790072E651 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 630D57662971B1790072E651 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		630D57692971B1790072E651 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 630D57662971B1790072E651 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		630D576B2971B1790072E651 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 630D57662971B1790072E651 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		630D576D2971B1790072E651 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 630D57662971B1790072E651 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 630D573C2971941F0072E651 /* Project object */;
 }

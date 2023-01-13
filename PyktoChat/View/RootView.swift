@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  RootView.swift
 //  PyktoChat
 //
 //  Created by Scott McNally on 13/01/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct RootView: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -16,11 +16,12 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
+        .font(Font.button)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct RootView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        RootView()
     }
 }
