@@ -24,7 +24,7 @@ extension Font{
     public static var settings: Font{
         return Font.custom("LexendDeca-Regular", size: 16)
     }
-    public static var titleText: Font{
+    public static var titleText1: Font{
         return Font.custom("LexendDeca-Bold", size: 23)
     }
     public static var pageTitle: Font{
