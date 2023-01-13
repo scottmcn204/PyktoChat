@@ -23,7 +23,7 @@ struct RootView: View {
             //onDismiss
         } content: {
             // onBoarding sequence
-            OnboardingContainerView()
+            OnboardingContainerView(isOnboarding: $isOnboarding)
         }
     }
 }

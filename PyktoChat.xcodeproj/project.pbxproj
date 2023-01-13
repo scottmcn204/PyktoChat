@@ -140,8 +140,8 @@
 				630D57782971CB070072E651 /* PhoneNumberView.swift */,
 				630D577A2971CB1E0072E651 /* VerificationView.swift */,
 				630D577C2971CB2D0072E651 /* CreateProfileView.swift */,
-				6308CB8D2971DFB600B0766D /* DrawView.swift */,
 				630D577E2971CB3F0072E651 /* SyncContactsView.swift */,
+				6308CB8D2971DFB600B0766D /* DrawView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

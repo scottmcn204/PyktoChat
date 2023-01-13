@@ -28,17 +28,17 @@ struct CreateProfileView: View {
             Spacer()
             ZStack{
                 Rectangle()
-                    .foregroundColor(Color("input"))
+                    .foregroundColor(Color("inputField"))
                     .cornerRadius(8)
                     .frame(height: 46)
-                TextField("First Name", text: $firstName)
+                TextField("First Name", text: $firstName).padding()
             }
             ZStack{
                 Rectangle()
-                    .foregroundColor(Color("input"))
+                    .foregroundColor(Color("inputField"))
                     .cornerRadius(8)
                     .frame(height: 46)
-                TextField("Last Name", text: $lastName)
+                TextField("Last Name", text: $lastName).padding()
             }
             Spacer()
             Button{
