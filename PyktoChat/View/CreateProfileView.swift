@@ -20,11 +20,26 @@ struct CreateProfileView: View {
             Text("Just a few more things to get started")
                 .font(Font.bodyParagraph)
                 .padding(.top, 12)
-            
-            TextField("First Name", text: $firstName)
-            
-            TextField("Last Name", text: $lastName)
-            
+            Text("Start off with a little picture to denote yourself")
+                .font(Font.bodyParagraph)
+                .padding(.top, 12)
+            DrawView().frame(width: 200,height: 200).cornerRadius(200).overlay(RoundedRectangle(cornerRadius: 200).stroke(.blue, lineWidth: 4 ))
+                .padding(.top, 15)
+            Spacer()
+            ZStack{
+                Rectangle()
+                    .foregroundColor(Color("input"))
+                    .cornerRadius(8)
+                    .frame(height: 46)
+                TextField("First Name", text: $firstName)
+            }
+            ZStack{
+                Rectangle()
+                    .foregroundColor(Color("input"))
+                    .cornerRadius(8)
+                    .frame(height: 46)
+                TextField("Last Name", text: $lastName)
+            }
             Spacer()
             Button{
                 currentStep = .contacts

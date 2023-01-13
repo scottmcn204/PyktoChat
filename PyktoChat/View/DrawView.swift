@@ -36,7 +36,7 @@ struct DrawView: View {
                     self.currentLine = Line(points: [])
                 })
             )
-        }.frame(width: 50, height: 50)
+        }
     }
 }
 
