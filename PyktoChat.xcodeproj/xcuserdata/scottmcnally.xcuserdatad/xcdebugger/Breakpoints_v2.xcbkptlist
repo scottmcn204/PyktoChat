@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "B33ACED7-A7A8-4323-BE53-F5C3561D54F9"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2F49A23B-9FB2-40A9-B3F7-0E0EE8C4B90B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PyktoChat/Services/DatabaseService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "getPlatformUsers(localContacts:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E68659B6-8593-4377-8257-48CC70898D94"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PyktoChat/Services/DatabaseService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "getPlatformUsers(localContacts:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "860AC016-0024-4582-9586-AD8F1E607205"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PyktoChat/Services/DatabaseService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "getPlatformUsers(localContacts:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FEBBD534-2EE2-429D-918D-32ED51CDD929"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PyktoChat/Services/DatabaseService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "getPlatformUsers(localContacts:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F1B9781C-189E-447A-98C4-26200A578AAE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PyktoChat/ViewModel/ContactsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "getLocalContacts()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F1B9781C-189E-447A-98C4-26200A578AAE - 905421ac2e8f0ec6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in PyktoChat.ContactsViewModel.getLocalContacts() -&gt; ()"
+                  moduleName = "PyktoChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/scottmcnally/Library/Mobile%20Documents/com~apple~CloudDocs/Documents/SwiftProgramming/PyctoChat/PyktoChat/PyktoChat/ViewModel/ContactsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "668">
+               </Location>
+               <Location
+                  uuid = "F1B9781C-189E-447A-98C4-26200A578AAE - f417f1cfc64b9bf1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Array&lt;PyktoChat.User&gt;) -&gt; () in closure #1 () -&gt; () in PyktoChat.ContactsViewModel.getLocalContacts() -&gt; ()"
+                  moduleName = "PyktoChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/scottmcnally/Library/Mobile%20Documents/com~apple~CloudDocs/Documents/SwiftProgramming/PyctoChat/PyktoChat/PyktoChat/ViewModel/ContactsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "168">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4F569C46-2408-46CC-BAA8-21289793B187"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PyktoChat/ViewModel/ContactsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "getLocalContacts()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4F569C46-2408-46CC-BAA8-21289793B187 - f417f1cfc64b9bf1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.Array&lt;PyktoChat.User&gt;) -&gt; () in closure #1 () -&gt; () in PyktoChat.ContactsViewModel.getLocalContacts() -&gt; ()"
+                  moduleName = "PyktoChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/scottmcnally/Library/Mobile%20Documents/com~apple~CloudDocs/Documents/SwiftProgramming/PyctoChat/PyktoChat/PyktoChat/ViewModel/ContactsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "168">
+               </Location>
+               <Location
+                  uuid = "4F569C46-2408-46CC-BAA8-21289793B187 - c85970e6a42e4944"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #2 (Swift.Array&lt;PyktoChat.User&gt;) -&gt; () in closure #1 () -&gt; () in PyktoChat.ContactsViewModel.getLocalContacts() -&gt; ()"
+                  moduleName = "PyktoChat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/scottmcnally/Library/Mobile%20Documents/com~apple~CloudDocs/Documents/SwiftProgramming/PyctoChat/PyktoChat/PyktoChat/ViewModel/ContactsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
