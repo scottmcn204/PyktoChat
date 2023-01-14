@@ -30,6 +30,7 @@
 		630D577B2971CB1E0072E651 /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630D577A2971CB1E0072E651 /* VerificationView.swift */; };
 		630D577D2971CB2D0072E651 /* CreateProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630D577C2971CB2D0072E651 /* CreateProfileView.swift */; };
 		630D577F2971CB3F0072E651 /* SyncContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630D577E2971CB3F0072E651 /* SyncContactsView.swift */; };
+		6324A245297364D100643265 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6324A244297364D100643265 /* GoogleService-Info.plist */; };
 		635715172973348800E8335F /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635715162973348800E8335F /* ContactsViewModel.swift */; };
 		63571519297346CC00E8335F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63571518297346CC00E8335F /* UserModel.swift */; };
 		6357151B2973482700E8335F /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6357151A2973482700E8335F /* DatabaseService.swift */; };
@@ -59,6 +60,7 @@
 		630D577A2971CB1E0072E651 /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
 		630D577C2971CB2D0072E651 /* CreateProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileView.swift; sourceTree = "<group>"; };
 		630D577E2971CB3F0072E651 /* SyncContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncContactsView.swift; sourceTree = "<group>"; };
+		6324A244297364D100643265 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		635715162973348800E8335F /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
 		63571518297346CC00E8335F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		6357151A2973482700E8335F /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				630D57712971B5890072E651 /* PyktoChat.entitlements */,
 				630D576129719CB00072E651 /* Info.plist */,
 				630D57642971AD320072E651 /* GoogleService-Info.plist */,
+				6324A244297364D100643265 /* GoogleService-Info.plist */,
 				630D576F2971B2330072E651 /* AppDelegate.swift */,
 				630D57472971941F0072E651 /* PyktoChatApp.swift */,
 				630D574D297194200072E651 /* Preview Content */,
@@ -257,6 +260,7 @@
 				630D574C297194200072E651 /* Assets.xcassets in Resources */,
 				630D575E29719C750072E651 /* LexendDeca-Bold.ttf in Resources */,
 				630D57652971AD320072E651 /* GoogleService-Info.plist in Resources */,
+				6324A245297364D100643265 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
