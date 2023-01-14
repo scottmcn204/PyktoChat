@@ -13,7 +13,7 @@ struct PyktoChatApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-            RootView()
+            RootView().environmentObject(ContactsViewModel())
         }
     }
 }

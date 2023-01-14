@@ -30,6 +30,10 @@
 		630D577B2971CB1E0072E651 /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630D577A2971CB1E0072E651 /* VerificationView.swift */; };
 		630D577D2971CB2D0072E651 /* CreateProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630D577C2971CB2D0072E651 /* CreateProfileView.swift */; };
 		630D577F2971CB3F0072E651 /* SyncContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630D577E2971CB3F0072E651 /* SyncContactsView.swift */; };
+		635715172973348800E8335F /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635715162973348800E8335F /* ContactsViewModel.swift */; };
+		63571519297346CC00E8335F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63571518297346CC00E8335F /* UserModel.swift */; };
+		6357151B2973482700E8335F /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6357151A2973482700E8335F /* DatabaseService.swift */; };
+		6357151D29734C7000E8335F /* PhoneCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6357151C29734C7000E8335F /* PhoneCleaner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +59,10 @@
 		630D577A2971CB1E0072E651 /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
 		630D577C2971CB2D0072E651 /* CreateProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileView.swift; sourceTree = "<group>"; };
 		630D577E2971CB3F0072E651 /* SyncContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncContactsView.swift; sourceTree = "<group>"; };
+		635715162973348800E8335F /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
+		63571518297346CC00E8335F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		6357151A2973482700E8335F /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		6357151C29734C7000E8335F /* PhoneCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCleaner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				630D57722971C2670072E651 /* AuthViewModel.swift */,
+				635715162973348800E8335F /* ContactsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -127,6 +136,7 @@
 		630D5756297194810072E651 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				63571518297346CC00E8335F /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -149,6 +159,7 @@
 		630D5758297194C90072E651 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6357151A2973482700E8335F /* DatabaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -158,6 +169,7 @@
 			children = (
 				630D576229719F3B0072E651 /* Fonts.swift */,
 				6308CB8B2971D52700B0766D /* OnboardingButtonFile.swift */,
+				6357151C29734C7000E8335F /* PhoneCleaner.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -258,15 +270,19 @@
 				630D57732971C2670072E651 /* AuthViewModel.swift in Sources */,
 				630D57702971B2330072E651 /* AppDelegate.swift in Sources */,
 				630D574A2971941F0072E651 /* RootView.swift in Sources */,
+				635715172973348800E8335F /* ContactsViewModel.swift in Sources */,
 				630D576329719F3B0072E651 /* Fonts.swift in Sources */,
 				630D577F2971CB3F0072E651 /* SyncContactsView.swift in Sources */,
+				6357151B2973482700E8335F /* DatabaseService.swift in Sources */,
 				630D577D2971CB2D0072E651 /* CreateProfileView.swift in Sources */,
 				630D57482971941F0072E651 /* PyktoChatApp.swift in Sources */,
 				630D57752971C8600072E651 /* OnboardingContainerView.swift in Sources */,
 				6308CB8E2971DFB600B0766D /* DrawView.swift in Sources */,
 				6308CB8C2971D52700B0766D /* OnboardingButtonFile.swift in Sources */,
+				6357151D29734C7000E8335F /* PhoneCleaner.swift in Sources */,
 				630D577B2971CB1E0072E651 /* VerificationView.swift in Sources */,
 				630D57792971CB070072E651 /* PhoneNumberView.swift in Sources */,
+				63571519297346CC00E8335F /* UserModel.swift in Sources */,
 				630D57772971CAFC0072E651 /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
