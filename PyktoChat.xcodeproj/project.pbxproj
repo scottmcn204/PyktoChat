@@ -17,7 +17,6 @@
 		630D575F29719C750072E651 /* LexendDeca-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 630D575C29719C750072E651 /* LexendDeca-SemiBold.ttf */; };
 		630D576029719C750072E651 /* LexendDeca-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 630D575D29719C750072E651 /* LexendDeca-Regular.ttf */; };
 		630D576329719F3B0072E651 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630D576229719F3B0072E651 /* Fonts.swift */; };
-		630D57652971AD320072E651 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 630D57642971AD320072E651 /* GoogleService-Info.plist */; };
 		630D57682971B1790072E651 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 630D57672971B1790072E651 /* FirebaseAuth */; };
 		630D576A2971B1790072E651 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 630D57692971B1790072E651 /* FirebaseFirestore */; };
 		630D576C2971B1790072E651 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 630D576B2971B1790072E651 /* FirebaseFirestoreSwift */; };
@@ -30,11 +29,11 @@
 		630D577B2971CB1E0072E651 /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630D577A2971CB1E0072E651 /* VerificationView.swift */; };
 		630D577D2971CB2D0072E651 /* CreateProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630D577C2971CB2D0072E651 /* CreateProfileView.swift */; };
 		630D577F2971CB3F0072E651 /* SyncContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630D577E2971CB3F0072E651 /* SyncContactsView.swift */; };
-		6324A245297364D100643265 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6324A244297364D100643265 /* GoogleService-Info.plist */; };
 		635715172973348800E8335F /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635715162973348800E8335F /* ContactsViewModel.swift */; };
 		63571519297346CC00E8335F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63571518297346CC00E8335F /* UserModel.swift */; };
 		6357151B2973482700E8335F /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6357151A2973482700E8335F /* DatabaseService.swift */; };
-		6357151D29734C7000E8335F /* PhoneCleaner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6357151C29734C7000E8335F /* PhoneCleaner.swift */; };
+		6357151D29734C7000E8335F /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6357151C29734C7000E8335F /* TextHelper.swift */; };
+		63AE7F1429742900000B258C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63AE7F1329742900000B258C /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +49,6 @@
 		630D575D29719C750072E651 /* LexendDeca-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LexendDeca-Regular.ttf"; sourceTree = "<group>"; };
 		630D576129719CB00072E651 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		630D576229719F3B0072E651 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		630D57642971AD320072E651 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		630D576F2971B2330072E651 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		630D57712971B5890072E651 /* PyktoChat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PyktoChat.entitlements; sourceTree = "<group>"; };
 		630D57722971C2670072E651 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
@@ -60,11 +58,11 @@
 		630D577A2971CB1E0072E651 /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
 		630D577C2971CB2D0072E651 /* CreateProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileView.swift; sourceTree = "<group>"; };
 		630D577E2971CB3F0072E651 /* SyncContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncContactsView.swift; sourceTree = "<group>"; };
-		6324A244297364D100643265 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		635715162973348800E8335F /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
 		63571518297346CC00E8335F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		6357151A2973482700E8335F /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
-		6357151C29734C7000E8335F /* PhoneCleaner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCleaner.swift; sourceTree = "<group>"; };
+		6357151C29734C7000E8335F /* TextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHelper.swift; sourceTree = "<group>"; };
+		63AE7F1329742900000B258C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,9 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				630D57712971B5890072E651 /* PyktoChat.entitlements */,
+				63AE7F1329742900000B258C /* GoogleService-Info.plist */,
 				630D576129719CB00072E651 /* Info.plist */,
-				630D57642971AD320072E651 /* GoogleService-Info.plist */,
-				6324A244297364D100643265 /* GoogleService-Info.plist */,
 				630D576F2971B2330072E651 /* AppDelegate.swift */,
 				630D57472971941F0072E651 /* PyktoChatApp.swift */,
 				630D574D297194200072E651 /* Preview Content */,
@@ -148,13 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				630D57492971941F0072E651 /* RootView.swift */,
-				630D57742971C8600072E651 /* OnboardingContainerView.swift */,
-				630D57762971CAFC0072E651 /* WelcomeView.swift */,
-				630D57782971CB070072E651 /* PhoneNumberView.swift */,
-				630D577A2971CB1E0072E651 /* VerificationView.swift */,
-				630D577C2971CB2D0072E651 /* CreateProfileView.swift */,
-				630D577E2971CB3F0072E651 /* SyncContactsView.swift */,
-				6308CB8D2971DFB600B0766D /* DrawView.swift */,
+				63AE7F182976B9B7000B258C /* Segments */,
+				63AE7F172976B99B000B258C /* Onboarding */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,7 +164,7 @@
 			children = (
 				630D576229719F3B0072E651 /* Fonts.swift */,
 				6308CB8B2971D52700B0766D /* OnboardingButtonFile.swift */,
-				6357151C29734C7000E8335F /* PhoneCleaner.swift */,
+				6357151C29734C7000E8335F /* TextHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -185,6 +177,27 @@
 				630D575C29719C750072E651 /* LexendDeca-SemiBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		63AE7F172976B99B000B258C /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				630D57742971C8600072E651 /* OnboardingContainerView.swift */,
+				630D57762971CAFC0072E651 /* WelcomeView.swift */,
+				630D57782971CB070072E651 /* PhoneNumberView.swift */,
+				630D577A2971CB1E0072E651 /* VerificationView.swift */,
+				630D577C2971CB2D0072E651 /* CreateProfileView.swift */,
+				630D577E2971CB3F0072E651 /* SyncContactsView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		63AE7F182976B9B7000B258C /* Segments */ = {
+			isa = PBXGroup;
+			children = (
+				6308CB8D2971DFB600B0766D /* DrawView.swift */,
+			);
+			path = Segments;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +272,7 @@
 				630D574F297194200072E651 /* Preview Assets.xcassets in Resources */,
 				630D574C297194200072E651 /* Assets.xcassets in Resources */,
 				630D575E29719C750072E651 /* LexendDeca-Bold.ttf in Resources */,
-				630D57652971AD320072E651 /* GoogleService-Info.plist in Resources */,
-				6324A245297364D100643265 /* GoogleService-Info.plist in Resources */,
+				63AE7F1429742900000B258C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,7 +295,7 @@
 				630D57752971C8600072E651 /* OnboardingContainerView.swift in Sources */,
 				6308CB8E2971DFB600B0766D /* DrawView.swift in Sources */,
 				6308CB8C2971D52700B0766D /* OnboardingButtonFile.swift in Sources */,
-				6357151D29734C7000E8335F /* PhoneCleaner.swift in Sources */,
+				6357151D29734C7000E8335F /* TextHelper.swift in Sources */,
 				630D577B2971CB1E0072E651 /* VerificationView.swift in Sources */,
 				630D57792971CB070072E651 /* PhoneNumberView.swift in Sources */,
 				63571519297346CC00E8335F /* UserModel.swift in Sources */,

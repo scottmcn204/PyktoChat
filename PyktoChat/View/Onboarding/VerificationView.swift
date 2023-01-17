@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import Combine
 
 struct VerificationView: View {
     @Binding var currentStep : OnboardingStep
+    @Binding var isOnboarding : Bool
     @State var verificationCode = ""
     var body: some View {
         VStack{
@@ -24,6 +26,11 @@ struct VerificationView: View {
                     .foregroundColor(Color("inputField"))
                 HStack{
                     TextField("", text: $verificationCode)
+                        .keyboardType(.numberPad)
+                        .onReceive(Just(verificationCode)) { _ in
+                            TextHelper.limitText(&verificationCode, 6)
+                        }
+                    
                     Spacer()
                     Button{
                         verificationCode = ""
@@ -36,7 +43,22 @@ struct VerificationView: View {
             }.padding(.top, 34)
             Spacer()
             Button{
-                currentStep = .profile
+                AuthViewModel.verifyCode(typedInCode: verificationCode) { error in
+                    if error == nil{
+                        DatabaseService().checkUserProfile { profileExists in
+                            if profileExists{
+                                isOnboarding = false
+                            }
+                            else{
+                                currentStep = .profile
+                            }
+                        }
+                    }
+                    else{
+                        //handle error
+                    }
+                    currentStep = .profile
+                }
             } label:{
                 Text("Next")
             }
@@ -49,6 +71,6 @@ struct VerificationView: View {
 
 struct VerificationView_Previews: PreviewProvider {
     static var previews: some View {
-        VerificationView(currentStep: .constant(.verification))
+        VerificationView(currentStep: .constant(.verification), isOnboarding: .constant(true))
     }
 }
