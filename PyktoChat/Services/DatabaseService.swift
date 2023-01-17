@@ -60,9 +60,16 @@ class DatabaseService{
             let fileReference = storageReference.child(path)
             let uploadTask = fileReference.putData(imageData!, metadata: nil) { meta, error in
                 if error == nil && meta != nil{
-                    doc.setData(["profilePic" : path], merge: true) { error in
-                        if error == nil{
-                            completion(true)
+                    fileReference.downloadURL { url, error in
+                        if url != nil && error == nil{
+                            doc.setData(["profilePic" : url!.absoluteString], merge: true) { error in
+                                if error == nil{
+                                    completion(true)
+                                }
+                            }
+                        }
+                        else{
+                            completion(false)
                         }
                     }
                 }
@@ -70,6 +77,9 @@ class DatabaseService{
                     completion(false)
                 }
             }
+        }
+        else{
+            completion(true)
         }
     }
     func checkUserProfile(completion: @escaping (Bool) -> Void){

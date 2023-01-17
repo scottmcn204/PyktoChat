@@ -43,12 +43,12 @@ struct PhoneNumberView: View {
             Button{
                 AuthViewModel.sendPhoneNumber(phoneNumber: phoneNumber) { error in
                     if error == nil{
-                        
+                        currentStep = .verification
                     }
                     else{
                         print(error)
                     }
-                    currentStep = .verification
+
                 }
             } label:{
                 Text("Next")
