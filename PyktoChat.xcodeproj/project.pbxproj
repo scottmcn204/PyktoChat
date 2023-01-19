@@ -34,8 +34,14 @@
 		63571519297346CC00E8335F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63571518297346CC00E8335F /* UserModel.swift */; };
 		6357151B2973482700E8335F /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6357151A2973482700E8335F /* DatabaseService.swift */; };
 		6357151D29734C7000E8335F /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6357151C29734C7000E8335F /* TextHelper.swift */; };
+		6380FC3D297807C7006B9D99 /* ConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380FC3C297807C7006B9D99 /* ConversationView.swift */; };
+		6380FC3F29782679006B9D99 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380FC3E29782679006B9D99 /* ColorPickerView.swift */; };
+		6380FC4129785B28006B9D99 /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380FC4029785B28006B9D99 /* ChatModel.swift */; };
+		6380FC4329785CF2006B9D99 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380FC4229785CF2006B9D99 /* ChatViewModel.swift */; };
 		63AE7F1429742900000B258C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63AE7F1329742900000B258C /* GoogleService-Info.plist */; };
 		63AE7F1B2976BA67000B258C /* FriendsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AE7F1A2976BA67000B258C /* FriendsListView.swift */; };
+		63DBB839297957260011D9EC /* ProfilePicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DBB838297957260011D9EC /* ProfilePicView.swift */; };
+		63DBB83D297959630011D9EC /* DrawBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DBB83C297959630011D9EC /* DrawBubbleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,8 +71,14 @@
 		63571518297346CC00E8335F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		6357151A2973482700E8335F /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		6357151C29734C7000E8335F /* TextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHelper.swift; sourceTree = "<group>"; };
+		6380FC3C297807C7006B9D99 /* ConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationView.swift; sourceTree = "<group>"; };
+		6380FC3E29782679006B9D99 /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
+		6380FC4029785B28006B9D99 /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
+		6380FC4229785CF2006B9D99 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		63AE7F1329742900000B258C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		63AE7F1A2976BA67000B258C /* FriendsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListView.swift; sourceTree = "<group>"; };
+		63DBB838297957260011D9EC /* ProfilePicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicView.swift; sourceTree = "<group>"; };
+		63DBB83C297959630011D9EC /* DrawBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawBubbleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +145,7 @@
 			children = (
 				630D57722971C2670072E651 /* AuthViewModel.swift */,
 				635715162973348800E8335F /* ContactsViewModel.swift */,
+				6380FC4229785CF2006B9D99 /* ChatViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -141,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				63571518297346CC00E8335F /* UserModel.swift */,
+				6380FC4029785B28006B9D99 /* ChatModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -150,6 +164,7 @@
 			children = (
 				630D57492971941F0072E651 /* RootView.swift */,
 				63AE7F192976BA46000B258C /* FriendsViews */,
+				6380FC3B297807AD006B9D99 /* ChatViews */,
 				63AE7F182976B9B7000B258C /* Segments */,
 				63AE7F172976B99B000B258C /* Onboarding */,
 			);
@@ -184,6 +199,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		6380FC3B297807AD006B9D99 /* ChatViews */ = {
+			isa = PBXGroup;
+			children = (
+				6380FC3C297807C7006B9D99 /* ConversationView.swift */,
+			);
+			path = ChatViews;
+			sourceTree = "<group>";
+		};
 		63AE7F172976B99B000B258C /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +224,9 @@
 			isa = PBXGroup;
 			children = (
 				6308CB8D2971DFB600B0766D /* DrawView.swift */,
+				6380FC3E29782679006B9D99 /* ColorPickerView.swift */,
+				63DBB83C297959630011D9EC /* DrawBubbleView.swift */,
+				63DBB838297957260011D9EC /* ProfilePicView.swift */,
 			);
 			path = Segments;
 			sourceTree = "<group>";
@@ -303,10 +329,12 @@
 				630D574A2971941F0072E651 /* RootView.swift in Sources */,
 				635715172973348800E8335F /* ContactsViewModel.swift in Sources */,
 				630D576329719F3B0072E651 /* Fonts.swift in Sources */,
+				6380FC4329785CF2006B9D99 /* ChatViewModel.swift in Sources */,
 				630D577F2971CB3F0072E651 /* SyncContactsView.swift in Sources */,
 				6357151B2973482700E8335F /* DatabaseService.swift in Sources */,
 				630D577D2971CB2D0072E651 /* CreateProfileView.swift in Sources */,
 				630D57482971941F0072E651 /* PyktoChatApp.swift in Sources */,
+				63DBB83D297959630011D9EC /* DrawBubbleView.swift in Sources */,
 				630D57752971C8600072E651 /* OnboardingContainerView.swift in Sources */,
 				6308CB8E2971DFB600B0766D /* DrawView.swift in Sources */,
 				6308CB8C2971D52700B0766D /* OnboardingButtonFile.swift in Sources */,
@@ -314,8 +342,12 @@
 				630D577B2971CB1E0072E651 /* VerificationView.swift in Sources */,
 				63AE7F1B2976BA67000B258C /* FriendsListView.swift in Sources */,
 				630D57792971CB070072E651 /* PhoneNumberView.swift in Sources */,
+				6380FC3F29782679006B9D99 /* ColorPickerView.swift in Sources */,
 				63571519297346CC00E8335F /* UserModel.swift in Sources */,
 				630D57772971CAFC0072E651 /* WelcomeView.swift in Sources */,
+				6380FC3D297807C7006B9D99 /* ConversationView.swift in Sources */,
+				6380FC4129785B28006B9D99 /* ChatModel.swift in Sources */,
+				63DBB839297957260011D9EC /* ProfilePicView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

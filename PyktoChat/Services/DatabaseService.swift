@@ -97,4 +97,85 @@ class DatabaseService{
 
         }
     }
+    
+    
+    func getAllChats(completion: @escaping ([Chat]) -> Void){
+        let db = Firestore.firestore()
+        let chatsQuery = db.collection("chats").whereField("participants", arrayContains: AuthViewModel.getLoggedInUserId())
+        chatsQuery.getDocuments { snapshot, error in
+            if snapshot != nil && error == nil{
+                var chats = [Chat]()
+                for doc in snapshot!.documents{
+                    let chat = try? doc.data(as: Chat.self)
+                    if let chat = chat{
+                        chats.append(chat)
+                    }
+                }
+                completion(chats)
+            }
+            else{
+                print("error in database retrieval")
+            }
+        }
+    }
+    func getAllMessages(chat : Chat, completion: @escaping ([ChatMessage]) -> Void){
+        guard chat.id != nil else{
+            completion([ChatMessage]())
+            return
+        }
+        let db = Firestore.firestore()
+        let messagesQuery = db.collection("chats").document(chat.id!).collection("messages").order(by: "timeStamp")
+        messagesQuery.getDocuments { snapshot, error in
+            if snapshot != nil && error == nil{
+                var messages = [ChatMessage]()
+                for doc in snapshot!.documents{
+                    let message = try? doc.data(as: ChatMessage.self)
+                    if let message = message {
+                        messages.append(message)
+                    }
+                }
+                completion(messages)
+            }
+            else{
+                print("error in database retrieval")
+            }
+        }
+    }
+    func sendDrawing(drawing: UIImage, chat: Chat){
+        guard chat.id != nil else{
+            return
+        }
+        let db = Firestore.firestore()
+        let doc = db.collection("chats").document(chat.id!).collection("messages").addDocument(data: [
+            "senderId" : AuthViewModel.getLoggedInUserId(),
+            "timeStamp" : Date()
+        ])
+        let image = drawing
+        let storageReference = Storage.storage().reference()
+        let imageData = image.jpegData(compressionQuality: 0.8)
+        guard imageData != nil else {
+            return
+        }
+        let path = "drawings/\(UUID().uuidString).jpg"
+        let fileReference = storageReference.child(path)
+        let uploadTask = fileReference.putData(imageData!, metadata: nil) { meta, error in
+            if error == nil && meta != nil{
+                fileReference.downloadURL { url, error in
+                    if url != nil && error == nil{
+                        doc.setData(["imageURL" : url!.absoluteString], merge: true) { error in
+                            if error == nil{
+                                return
+                            }
+                        }
+                    }
+                    else{
+                        return
+                    }
+                }
+            }
+            else{
+                return
+            }
+        }
+    }
 }

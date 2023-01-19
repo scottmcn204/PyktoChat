@@ -10,6 +10,8 @@ import SwiftUI
 struct FriendsListView: View {
     @State var textFilter = ""
     @EnvironmentObject var contactsViewModel : ContactsViewModel
+    @EnvironmentObject var chatViewModel : ChatViewModel
+    @Binding var isChatShowing: Bool
     var body: some View {
         VStack() {
             
@@ -36,15 +38,19 @@ struct FriendsListView: View {
                     .foregroundColor(Color("secondaryIcons"))
             }.frame(height: 46)
                 .onChange(of: textFilter) { _ in
-                    contactsViewModel.filterContacts(filterBy: textFilter)
+                    contactsViewModel.filterContacts(filterBy: textFilter.lowercased()
+                        .trimmingCharacters(in: .whitespacesAndNewlines))
                 }
             
             if contactsViewModel.filteredUsers.count > 0 {
                 List(contactsViewModel.filteredUsers) { user in
-                    FriendsRowView(user: user)
-                        .listRowBackground(Color.clear)
+                    Button{
+                        isChatShowing = true
+                    } label: {
+                        FriendsRowView(user: user)
+
+                    }.listRowBackground(Color.clear)
                         .listRowSeparator(.hidden)
-                    
                 }
                 .listStyle(.plain)
                 .padding(.top, 12)
@@ -63,6 +69,15 @@ struct FriendsListView: View {
                     
                 Spacer()
             }
+            List(chatViewModel.chats){ chat in
+                Button{
+                    chatViewModel.selectedChat = chat
+                    isChatShowing = true
+                } label: {
+                    Text(chat.id!)
+                }
+
+            }
 
         }.padding(.horizontal)
             .onAppear{
@@ -73,6 +88,6 @@ struct FriendsListView: View {
 
 struct FriendsListView_Previews: PreviewProvider {
     static var previews: some View {
-        FriendsListView().environmentObject(ContactsViewModel())
+        FriendsListView(isChatShowing: .constant(false)).environmentObject(ContactsViewModel()).environmentObject(ChatViewModel())
     }
 }

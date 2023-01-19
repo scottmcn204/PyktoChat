@@ -12,38 +12,48 @@ struct FriendsRowView: View {
     var body: some View {
         HStack(spacing: 24){
             let photoURL = URL(string: user.profilePic ?? "")
-            AsyncImage(url: photoURL) { phase in
-//                switch phase{
-//                case .success(let image):
+            if photoURL == nil{
+                ZStack {
+                    Rectangle().foregroundColor(.white)
+                    Text(user.firstName?.prefix(1) ?? "")
+                        .bold()
+                        .foregroundColor(.black)
+                }
+                .frame(width: 45, height: 45)
+                    .cornerRadius(45).overlay(RoundedRectangle(cornerRadius: 45).stroke(.blue, lineWidth: 3 ))
+            }
+            else{
+                AsyncImage(url: photoURL) { phase in
+                    switch phase{
+                    case .success(let image):
+                        image.resizable()
+                            .scaledToFill()
+                    case .failure:
+                        ZStack {
+                            Circle().foregroundColor(.white)
+                            Text(user.firstName?.prefix(1) ?? "")
+                                .bold()
+                        }
+                    case .empty:
+                        ProgressView()
+                    @unknown default:
+                        fatalError()
+                    }
+                }   .frame(width: 45, height: 45)
+                    .cornerRadius(45).overlay(RoundedRectangle(cornerRadius: 45).stroke(.blue, lineWidth: 3 ))
+                
+//                if let image = phase.image{
 //                    image.resizable()
 //                        .scaledToFill()
-//                case .failure:
-//                    ZStack {
-//                        Circle().foregroundColor(.white)
-//                        Text(user.firstName?.prefix(1) ?? "")
-//                            .bold()
-//                    }
-//                case .empty:
+//                }
+//                else if phase.error == nil{
+//
+//                }
+//                else{
 //                    ProgressView()
 //                }
-                if let image = phase.image{
-                    image.resizable()
-                        .scaledToFill()
-                }
-                else if phase.error == nil{
-                    ZStack {
-                        Rectangle().foregroundColor(.white)
-                        Text(user.firstName?.prefix(1) ?? "")
-                            .bold()
-                            .foregroundColor(.black)
-                    }
-                }
-                else{
-                    ProgressView()
-                }
             }
-            .frame(width: 45, height: 45)
-            .cornerRadius(45).overlay(RoundedRectangle(cornerRadius: 45).stroke(.blue, lineWidth: 3 ))
+
             
             VStack(alignment: .leading, spacing: 4) {
                 Text((user.firstName ?? "") + " " + (user.lastName ?? ""))

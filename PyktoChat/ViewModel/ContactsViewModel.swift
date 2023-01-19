@@ -28,7 +28,7 @@ class ContactsViewModel: ObservableObject{
                 DatabaseService().getPlatformUsers(localContacts: self.localContacts) { platformUsers in
                     DispatchQueue.main.async { // update the ui in the main thread
                         self.users = platformUsers
-                        self.filterContacts(filterBy: self.filterText)
+                        self.filterContacts(filterBy: self.filterText.lowercased())
                     }
                 }
             } catch {
@@ -40,8 +40,8 @@ class ContactsViewModel: ObservableObject{
         self.filterText = filterBy
         if filterBy != ""{
             self.filteredUsers = users.filter({ user in
-                user.firstName?.contains(filterText) ?? false ||
-                user.lastName?.contains(filterText) ?? false ||
+                user.firstName?.lowercased().contains(filterText) ?? false ||
+                user.lastName?.lowercased().contains(filterText) ?? false ||
                 user.phoneNumber?.contains(filterText) ?? false
             })
         }
@@ -49,5 +49,16 @@ class ContactsViewModel: ObservableObject{
             self.filteredUsers = users
         }
 
+    }
+    func getParticipantsGivenIds(ids: [String]) -> [User] {
+        let matchingUsers = users.filter { user in
+            if user.id == nil{
+                return false
+            }
+            else{
+                return ids.contains(user.id!)
+            }
+        }
+        return matchingUsers
     }
 }

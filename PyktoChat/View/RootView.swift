@@ -9,11 +9,12 @@ import SwiftUI
 
 struct RootView: View {
     @State var isOnboarding = !AuthViewModel.isUserLoggedIn()
+    @State var isChatShowing = false
     var body: some View {
         ZStack {
             Color("background").ignoresSafeArea()
             VStack {
-                FriendsListView()
+                FriendsListView(isChatShowing: $isChatShowing)
             }
             .fullScreenCover(isPresented: $isOnboarding){
                 //onDismiss
@@ -21,6 +22,9 @@ struct RootView: View {
             } content: {
                 // onBoarding sequence
                 OnboardingContainerView(isOnboarding: $isOnboarding)
+            }
+            .fullScreenCover(isPresented: $isChatShowing, onDismiss: nil) {
+                ConversationView(isChatShowing : $isChatShowing)
             }
         }
     }
