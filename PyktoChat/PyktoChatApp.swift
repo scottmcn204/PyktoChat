@@ -15,6 +15,7 @@ struct PyktoChatApp: App {
         WindowGroup {
             RootView().environmentObject(ContactsViewModel())
                 .environmentObject(ChatViewModel())
+                .environmentObject(SettingsViewModel())
         }
     }
 }

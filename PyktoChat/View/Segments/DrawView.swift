@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Line {
     var points = [CGPoint]()
-    var color: Color = .blue
+    var color: Color = .black
     var lineWidth: Double = 2.0
 //    static func saveDrawing(bgColor: UIColor, lineColor: UIColor, size: CGSize, points: [CGPoint]) -> UIImage {
 //        let format = UIGraphicsImageRendererFormat()

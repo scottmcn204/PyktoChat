@@ -14,4 +14,5 @@ struct User : Codable, Identifiable{
     var lastName : String?
     var phoneNumber : String?
     var profilePic : String?
+    var isActive : Bool = true
 }

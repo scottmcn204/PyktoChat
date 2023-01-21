@@ -11,6 +11,8 @@ import Combine
 struct PhoneNumberView: View {
     @State var phoneNumber = ""
     @Binding var currentStep : OnboardingStep
+    @State var isButtonDisabled = false
+    @State var errorLabelVisible = false
     var body: some View {
         VStack{
             Text("Verification")
@@ -29,6 +31,11 @@ struct PhoneNumberView: View {
                         .onReceive(Just(phoneNumber)) { _ in
                             TextHelper.applyPatternOnNumbers(&phoneNumber, pattern: "+### (###) ###-####", replacementCharacter: "#")
                         }
+                        .foregroundColor(Color("secondaryText"))
+//                        .placeholder(when: phoneNumber.isEmpty) {
+//                            Text("e.g +353 83 111 1111")
+//                                .foregroundColor(Color("secondaryText"))
+//                        }
                     Spacer()
                     Button{
                         phoneNumber = ""
@@ -38,23 +45,38 @@ struct PhoneNumberView: View {
                     }                         .frame(width: 19, height: 19 )
                         .foregroundColor(Color("inputFieldIcons"))
                 }.padding(.horizontal)
+                
             }.padding(.top, 34)
+            Text("Please Enter a valid Phone Number").foregroundColor(.red).font(Font.smallText)
+                .padding(.top)
+                .opacity(errorLabelVisible ? 1 : 0)
             Spacer()
             Button{
+                errorLabelVisible = false
+                isButtonDisabled = true
                 AuthViewModel.sendPhoneNumber(phoneNumber: phoneNumber) { error in
                     if error == nil{
                         currentStep = .verification
                     }
                     else{
-                        print(error)
+                        errorLabelVisible = true
                     }
+                    isButtonDisabled = false
 
                 }
             } label:{
-                Text("Next")
+                
+                HStack {
+                    Text("Next")
+                    if isButtonDisabled{
+                        ProgressView()
+                            .padding(.leading)
+                    }
+                }
             }
             .buttonStyle(OnboardingButtonStyle())
             .padding(.bottom, 87)
+            .disabled(isButtonDisabled)
         }
         .padding(.horizontal)
     }

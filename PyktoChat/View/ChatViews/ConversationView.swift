@@ -9,12 +9,14 @@ import SwiftUI
 
 struct ConversationView: View {
     @Binding var isChatShowing: Bool
+    @State var isEmptyCanvas : Bool
     @State var participants = [User]()
     @State private var currentLine = Line()
     @State private var lines: [Line] = []
     @State private var selectedColor: Color = .black
     @EnvironmentObject var chatViewModel: ChatViewModel
     @EnvironmentObject var contactsViewModel: ContactsViewModel
+    
 
     
     
@@ -27,6 +29,7 @@ struct ConversationView: View {
            }
                
        }.gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local).onChanged({ value in
+                self.isEmptyCanvas = false
                let newPoint = value.location
                currentLine.points.append(newPoint)
                self.lines.append(currentLine)
@@ -34,7 +37,7 @@ struct ConversationView: View {
            .onEnded({ value in
                self.currentLine = Line(points: [], color: selectedColor)
            })
-       ).frame(width: 400,height: 200)
+       ).frame(width: 370,height: 200)
     }
     
     func undoDraw(lines: [Line]){
@@ -43,6 +46,7 @@ struct ConversationView: View {
         }
         else if self.lines.count > 0{
             self.lines.removeAll()
+            self.isEmptyCanvas = true
         }
 
     }
@@ -50,12 +54,14 @@ struct ConversationView: View {
     func clearDraw(lines: [Line]){
         if self.lines.count > 0{
             self.lines.removeAll()
+            self.isEmptyCanvas = true
         }
     }
     
     var body: some View {
         ZStack {
-            Color("background")
+            Color(.green)
+                .opacity(0.2)
                 .ignoresSafeArea()
             VStack {
                 HStack {
@@ -83,16 +89,31 @@ struct ConversationView: View {
                 
                 Divider()
                 
-                ScrollView{
-                    VStack(spacing: 10) {
-                        ForEach(chatViewModel.messages) { message in
-                            let isFromUser = message.senderId == AuthViewModel.getLoggedInUserId()
-                            DrawBubbleView(imageURL: message.imageURL, isFromUser: isFromUser )
-                            
-                        }
-                        
-                    }.padding(.top, 5)
-                }.frame(width: 410)
+                ZStack {
+                    Color(.gray)
+                        .opacity(0.3)
+                    ScrollViewReader{ proxy in
+                        ScrollView{
+                            VStack(spacing: 10) {
+                                ForEach(Array(chatViewModel.messages.enumerated()), id: \.element) { index, message in
+                                    let isFromUser = message.senderId == AuthViewModel.getLoggedInUserId()
+                                    DrawBubbleView(imageURL: message.imageURL, isFromUser: isFromUser )
+                                        .padding(.bottom, 5)
+                                        .id(index)
+                                    
+                                    
+                                }
+                                
+                            }
+                        }.frame(maxWidth: .infinity)
+                            .onChange(of: chatViewModel.messages.count) { newCount in
+                                withAnimation {
+                                    proxy.scrollTo(newCount-1)
+                                }
+                            }
+                    }
+                }.cornerRadius(25)
+                
             
                 HStack{
                     Button{
@@ -127,36 +148,51 @@ struct ConversationView: View {
                         Image(systemName: "arrow.up.circle.fill")
                             .resizable()
                             .frame(width: 45, height: 45)
+                            .foregroundColor(isEmptyCanvas ? Color("drawingOuter") : .red )
                     } .padding(.trailing, 10)
-                }
+                        .disabled(isEmptyCanvas)
+                }.padding([.bottom, .top], 1)
                 
-                ZStack {
+                ZStack() {
+                    Rectangle()
+                        .frame(width: 370, height: 200)
+                        .foregroundColor(.white)
+                        .cornerRadius(25)
                     VStack {
                         Spacer()
                         Rectangle()
-                            .frame(width: 400, height: 1)
-                            .padding(.top, 20)
+                            .frame(width: 370, height: 1)
+                            //.padding()
                         Spacer()
                         Rectangle()
-                            .frame(width: 400, height: 1)
+                            .frame(width: 370, height: 1)
                         Spacer()
                         Rectangle()
-                            .frame(width: 400, height: 1)
+                            .frame(width: 370, height: 1)
                         Spacer()
                         Rectangle()
-                            .frame(width: 400, height: 1)
+                            .frame(width: 370, height: 1)
                         Spacer()
-                    }.foregroundColor(.blue)
+                    }.foregroundColor(Color("drawingOuter"))
+
                     canvasArea
-                        .cornerRadius(25).overlay(RoundedRectangle(cornerRadius: 25).stroke(Color("inputFieldIcons"), lineWidth: 4 ))
-                    .padding(.top, 15)
+                        .cornerRadius(25).overlay(RoundedRectangle(cornerRadius: 25).stroke(Color("drawingOuter"), lineWidth: 4 ))
+                    
+                    
                 }.frame(height: 200)
+                    .padding(.bottom, 10)
+
+                
             }.padding(.horizontal, 30)
                 .onAppear{
+                    
                     chatViewModel.getMessages()
                     let ids = chatViewModel.getParticipantIds()
                     self.participants = contactsViewModel.getParticipantsGivenIds(ids: ids)
 
+                }
+                .onDisappear{
+                    chatViewModel.conversationViewClean()
                 }
         }
     }
@@ -164,6 +200,6 @@ struct ConversationView: View {
 
 struct ConversationView_Previews: PreviewProvider {
     static var previews: some View {
-        ConversationView(isChatShowing: .constant(true)).environmentObject(ChatViewModel()).environmentObject(ContactsViewModel())
+        ConversationView(isChatShowing: .constant(true), isEmptyCanvas: true).environmentObject(ChatViewModel()).environmentObject(ContactsViewModel())
     }
 }

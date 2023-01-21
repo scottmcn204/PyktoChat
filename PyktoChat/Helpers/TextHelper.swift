@@ -9,12 +9,26 @@ import Foundation
 
 class TextHelper{
     static func sanitizePhone(phone: String) -> String{
-        return phone
+        var newPhone: String
+        if phone.prefix(4) != "+353"{
+            newPhone = ("+353\(phone)")
+        }
+        else{
+            newPhone = phone
+        }
+        newPhone = newPhone
             .replacingOccurrences(of: "(", with: "")
             .replacingOccurrences(of: ")", with: "")
             .replacingOccurrences(of: " ", with: "")
             .replacingOccurrences(of: "+", with: "")
             .replacingOccurrences(of: "-", with: "")
+        
+        if newPhone.prefix(4) == "3530"{
+            let intForIndex = 3
+            let index = newPhone.index(newPhone.startIndex, offsetBy: intForIndex)
+            newPhone.remove(at: index)
+        }
+        return newPhone
     }
     static func limitText(_ stringVar: inout String, _ limit: Int){
         if stringVar.count > limit{

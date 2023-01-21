@@ -16,7 +16,7 @@ struct Chat : Codable, Identifiable{
     var messages : [ChatMessage]?
 }
 
-struct ChatMessage : Codable, Identifiable{
+struct ChatMessage : Codable, Identifiable, Hashable{
     @DocumentID var id : String?
     var imageURL : String
     var senderId : String

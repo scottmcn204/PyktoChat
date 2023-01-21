@@ -10,6 +10,7 @@ import SwiftUI
 struct SyncContactsView: View {
     @Binding var currentStep: OnboardingStep
     @Binding var isOnboarding: Bool
+    @EnvironmentObject var contactsViewModel: ContactsViewModel
     var body: some View {
         VStack{
             Spacer()
@@ -28,11 +29,14 @@ struct SyncContactsView: View {
             }.buttonStyle(OnboardingButtonStyle())
                 .padding(.bottom, 87)
         }.padding(.horizontal)
+            .onAppear{
+                contactsViewModel.getLocalContacts()
+            }
     }
 }
 
 struct SyncContactsView_Previews: PreviewProvider {
     static var previews: some View {
-        SyncContactsView(currentStep: .constant(.contacts), isOnboarding: .constant(true))
+        SyncContactsView(currentStep: .constant(.contacts), isOnboarding: .constant(true)).environmentObject(ContactsViewModel())
     }
 }

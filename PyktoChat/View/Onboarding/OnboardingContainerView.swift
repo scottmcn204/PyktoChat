@@ -19,7 +19,7 @@ struct OnboardingContainerView: View {
     @Binding var isOnboarding: Bool
     var body: some View {
         ZStack{
-            Color("background")
+            Color(.green).opacity(0.2)
                 .ignoresSafeArea(edges: [.top, .bottom])
             switch currentStep{
             case .welcome:

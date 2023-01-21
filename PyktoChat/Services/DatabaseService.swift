@@ -12,6 +12,10 @@ import UIKit
 import FirebaseStorage
 
 class DatabaseService{
+    
+    var chatListViewListeners = [ListenerRegistration]()
+    var conversationViewListeners = [ListenerRegistration]()
+    
     func getPlatformUsers(localContacts: [CNContact], completion: @escaping ([User]) -> Void){
         var platformUsers = [User]()
         var phonesToCheck = localContacts.map { contact in
@@ -48,6 +52,7 @@ class DatabaseService{
         let db = Firestore.firestore()
         let doc = db.collection("users").document(AuthViewModel.getLoggedInUserId())
         doc.setData(["firstName": firstName,
+                     "isActive": true,
                      "lastName": lastName,
                      "phoneNumber": TextHelper.sanitizePhone(phone: AuthViewModel.getLoggedInUserPhone())])
         if let image = profilePic{
@@ -102,7 +107,7 @@ class DatabaseService{
     func getAllChats(completion: @escaping ([Chat]) -> Void){
         let db = Firestore.firestore()
         let chatsQuery = db.collection("chats").whereField("participants", arrayContains: AuthViewModel.getLoggedInUserId())
-        chatsQuery.getDocuments { snapshot, error in
+        let listener = chatsQuery.addSnapshotListener { snapshot, error in
             if snapshot != nil && error == nil{
                 var chats = [Chat]()
                 for doc in snapshot!.documents{
@@ -117,6 +122,7 @@ class DatabaseService{
                 print("error in database retrieval")
             }
         }
+        chatListViewListeners.append(listener)
     }
     func getAllMessages(chat : Chat, completion: @escaping ([ChatMessage]) -> Void){
         guard chat.id != nil else{
@@ -125,7 +131,7 @@ class DatabaseService{
         }
         let db = Firestore.firestore()
         let messagesQuery = db.collection("chats").document(chat.id!).collection("messages").order(by: "timeStamp")
-        messagesQuery.getDocuments { snapshot, error in
+        let listner = messagesQuery.addSnapshotListener{ snapshot, error in
             if snapshot != nil && error == nil{
                 var messages = [ChatMessage]()
                 for doc in snapshot!.documents{
@@ -140,6 +146,7 @@ class DatabaseService{
                 print("error in database retrieval")
             }
         }
+        conversationViewListeners.append(listner)
     }
     func sendDrawing(drawing: UIImage, chat: Chat){
         guard chat.id != nil else{
@@ -175,6 +182,40 @@ class DatabaseService{
             }
             else{
                 return
+            }
+        }
+    }
+    func createChat(chat: Chat, completion: @escaping (String) -> Void) {
+        let db = Firestore.firestore()
+        let doc =  db.collection("chats").document()
+        try? doc.setData(from: chat, completion: { error in
+            completion(doc.documentID)
+        })
+    }
+    
+    func detatchChatListViewListners() {
+        for listener in chatListViewListeners {
+            listener.remove()
+        }
+    }
+    func detatchConversationViewListners() {
+        for listener in conversationViewListeners {
+            listener.remove()
+        }
+    }
+    
+    func deactivateAccount(completion: @escaping () -> Void){
+        guard AuthViewModel.isUserLoggedIn() else{
+            return
+        }
+        let db = Firestore.firestore()
+        db.collection("users").document(AuthViewModel.getLoggedInUserId()).setData(
+            ["isActive" : false,
+             "firstName" : "Deleted",
+             "lastName": "user"],
+            merge: true) { error in
+            if error == nil {
+                completion()
             }
         }
     }

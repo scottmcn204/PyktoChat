@@ -14,6 +14,8 @@ struct CreateProfileView: View {
     @State var isSaveButtonDisabled = false
     @State private var currentLine = Line()
     @State private var lines: [Line] = []
+    @State var errorLabelVisible = false
+    @State var errorMessage = ""
     
     var canvasArea: some View{
        return Canvas{ context, size in
@@ -54,6 +56,11 @@ struct CreateProfileView: View {
                     .cornerRadius(8)
                     .frame(height: 46)
                 TextField("First Name", text: $firstName).padding()
+                    .foregroundColor(Color("secondaryText"))
+//                    .placeholder(when: firstName.isEmpty) {
+//                        Text("First Name")
+//                            .foregroundColor(Color("secondaryText"))
+//                    }
             }
             ZStack{
                 Rectangle()
@@ -61,9 +68,23 @@ struct CreateProfileView: View {
                     .cornerRadius(8)
                     .frame(height: 46)
                 TextField("Last Name", text: $lastName).padding()
+                    .foregroundColor(Color("secondaryText"))
+//                .placeholder(when: lastName.isEmpty) {
+//                    Text("Last Name")
+//                        .foregroundColor(Color("secondaryText"))
+//                }
             }
+            Text(errorMessage).foregroundColor(.red).font(Font.smallText)
+                .padding(.top)
+                .opacity(errorLabelVisible ? 1 : 0)
             Spacer()
             Button{
+                errorLabelVisible = false
+                guard !firstName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !lastName.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else{
+                    errorMessage = "Please enter in first and last name"
+                    errorLabelVisible = true
+                    return
+                }
                 let renderer = ImageRenderer(content: canvasArea)
                 let image = renderer.uiImage
                 isSaveButtonDisabled = true
@@ -73,7 +94,8 @@ struct CreateProfileView: View {
                             
                     }
                     else{
-                            //error
+                        errorMessage = "Error occured, please try again"
+                        errorLabelVisible = true
                     }
                     isSaveButtonDisabled = false
 

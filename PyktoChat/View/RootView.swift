@@ -8,13 +8,23 @@
 import SwiftUI
 
 struct RootView: View {
+    @Environment(\.scenePhase) var scenePhase
+    @EnvironmentObject var chatViewModel : ChatViewModel
+    @EnvironmentObject var contactsViewModel : ContactsViewModel
+    @EnvironmentObject var settingsViewModel : SettingsViewModel
     @State var isOnboarding = !AuthViewModel.isUserLoggedIn()
     @State var isChatShowing = false
+    @State var isSettingsShowing = false
     var body: some View {
         ZStack {
-            Color("background").ignoresSafeArea()
+            Color(.green).ignoresSafeArea().opacity(0.2)
             VStack {
-                FriendsListView(isChatShowing: $isChatShowing)
+                FriendsListView(isChatShowing: $isChatShowing, isSettingsShowing: $isSettingsShowing)
+            }
+            .onAppear{
+                if !isOnboarding{
+                    contactsViewModel.getLocalContacts()
+                }
             }
             .fullScreenCover(isPresented: $isOnboarding){
                 //onDismiss
@@ -24,7 +34,22 @@ struct RootView: View {
                 OnboardingContainerView(isOnboarding: $isOnboarding)
             }
             .fullScreenCover(isPresented: $isChatShowing, onDismiss: nil) {
-                ConversationView(isChatShowing : $isChatShowing)
+                ConversationView(isChatShowing : $isChatShowing, isEmptyCanvas: true)
+            }
+            .fullScreenCover(isPresented: $isSettingsShowing, onDismiss: nil, content: {
+                SettingsView(isSettingsShowing: $isSettingsShowing, isOnboarding: $isOnboarding)
+            })
+            .onChange(of: scenePhase) { newPhase in
+                if newPhase == .active{
+                    print("active")
+                }
+                else if newPhase == .inactive{
+                    print("inactive")
+                }
+                else if newPhase == .background{
+                    print("background")
+                    chatViewModel.chatListViewClean()
+                }
             }
         }
     }
@@ -32,6 +57,6 @@ struct RootView: View {
 
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
-        RootView()
+        RootView().environmentObject(ChatViewModel()).environmentObject(ContactsViewModel()).environmentObject(SettingsViewModel())
     }
 }
